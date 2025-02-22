@@ -1,9 +1,8 @@
 import os
 from mistralai import Mistral
 
-# Replace with your Mistral API key
-API_KEY = "CYeWLgxaQHbzzmmrpBMPqMjTLRXcEIWT"
-MODEL = "mistral-large-latest"
+API_KEY = ""  # just get the API key from their website https://console.mistral.ai/home which is absolutely free to get 
+MODEL = "mistral-large-latest" # thier best LLM model with 65billion+ parameters
 
 client = Mistral(api_key=API_KEY)
 
