@@ -9,7 +9,7 @@ client = Mistral(api_key=API_KEY)
 def ask_copilot(user_input):
     stream_response = client.chat.stream(
         model=MODEL,
-        messages=[{"role": "user", "content": user_input}] #Ye function aapke text ko dictionary k format m API ko bhejta hai
+        messages=[{"role": "user", "content": user_input}] #Ye function aapke text ko dictionary k format m leta hai aur usko json format me change karke API ko bhejta hai
     )
 
     response_text = ""
