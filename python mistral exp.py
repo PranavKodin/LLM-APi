@@ -9,11 +9,11 @@ client = Mistral(api_key=API_KEY)
 def ask_copilot(user_input):
     stream_response = client.chat.stream(
         model=MODEL,
-        messages=[{"role": "user", "content": user_input}]
+        messages=[{"role": "user", "content": user_input}] #Ye function aapke text ko dictionary k format m API ko bhejta hai
     )
 
     response_text = ""
-    for chunk in stream_response:
+    for chunk in stream_response:  #ye code snippet API k respose ko chunks me (tukde) me aapko print kara ke deta hai iss se aapko wait nhi karna padta reponse ka
         if chunk.data.choices[0].delta.content:
             text = chunk.data.choices[0].delta.content
             print(text, end="", flush=True)
@@ -22,7 +22,7 @@ def ask_copilot(user_input):
     return response_text
 
 # Continuous chat loop
-print("🚀 Jarvis-like Copilot Ready! Type 'exit' to quit.\n")
+print("🚀 Jarvis-like Copilot Ready! Type 'exit' to quit.\n") #ye main code user se inputleta hai aur puchhta hai
 while True:
     user_query = input("You: ")
     if user_query.lower() == "exit":
